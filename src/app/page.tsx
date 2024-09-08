@@ -1,101 +1,163 @@
+import Grid from "@/components/Grid";
+import Logo from "@/components/Logo";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Select } from "@/components/ui/select";
+import { ChevronDown, Filter } from "lucide-react";
 import Image from "next/image";
+
+const projects = [
+  {
+    name: "nounspace",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "Akash Network",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+  {
+    name: "CoinCap",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="min-h-screen bg-black text-white">
+        <div className="flex justify-center py-4">
+          <Logo />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <main className="container mx-auto px-4">
+          <header className="mb-12 text-center border border-[#0E5F3E] rounded-3xl relative overflow-hidden min-h-[477px] flex items-center flex-col justify-center">
+            <div className="absolute inset-0">
+              <Grid />
+            </div>
+            <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+              <div className="h-full w-full flex">
+                <div className="bg-gradient-to-l from-black w-full h-full"></div>
+                <div className="bg-gradient-to-r from-black w-full h-full"></div>
+              </div>
+            </div>
+            <h1 className="text-6xl font-black mb-4 relative">
+              STAKING MOR TOWARDS
+              <br />
+              BUILDERS STARTS SOON...
+            </h1>
+            <p className="text-2xl max-w-3xl mx-auto font-mono relative">
+              Access Smart Agents, AI Models & Support The Open Source Project
+              Of Your Choice. Each project selects how to reward those Staking
+              MOR toward them.
+            </p>
+          </header>
+
+          <div className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border">
+            <div className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
+              <Select>
+                <Button variant="outline" className="bg-gray-800 text-white">
+                  Salary <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </Select>
+              <Select>
+                <Button variant="outline" className="bg-gray-800 text-white">
+                  Job type <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </Select>
+              <Button variant="outline" className="bg-green-800 text-white">
+                Engineer
+              </Button>
+              <Button variant="outline" className="bg-green-800 text-white">
+                Remote
+              </Button>
+              <Button variant="outline" className="bg-gray-800 text-white">
+                Remote
+              </Button>
+              <Button variant="outline" className="bg-gray-800 text-white">
+                <Filter className="mr-2 h-4 w-4" /> Filters
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-card border border-border rounded-xl overflow-hidden"
+                >
+                  <Image
+                    src={project.logo}
+                    alt={project.name}
+                    width={295}
+                    height={197}
+                    className="mb-2"
+                  />
+                  <div className="p-5">
+                    <Badge variant={"secondary"} className="rounded-full">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                      <span className="text-sm">AI</span>
+                    </Badge>
+                    <h3 className="text-lg font-semibold">{project.name}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </main>
+        <footer className="mt-12 font-mono text-sm text-muted-foreground w-full max-w-screen-xl mx-auto px-5 py-16">
+          <p className="mb-4 text-xl">
+            MOR.BUILDERS IS FOR INFORMATIONAL PURPOSES ONLY. ALL PROJECTS
+            INDEPENDENTLY DETERMINE THE TYPE OF REWARDS THEY PROVIDE TO MOR
+            STAKERS. VENICE PROVIDES A PRO ACCOUNT TO THOSE THAT STAKE MOR
+            TOWARD THEIR BUILDER ADDRESS.
+          </p>
+          <div className="flex justify-center items-center">
+            <Logo />
+          </div>
+        </footer>
+      </div>
+    </>
   );
 }
