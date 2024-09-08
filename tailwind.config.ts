@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 import { PluginAPI } from "tailwindcss/types/config";
-
 import svgToDataUri from "mini-svg-data-uri";
 
+// @ts-expect-error to prevent build declaration error
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 const config: Config = {
