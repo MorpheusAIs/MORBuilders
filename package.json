@@ -19,12 +19,15 @@
     "lucide-react": "^0.439.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.8",
+    "notion-types": "^6.16.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-notion-x": "^6.16.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
