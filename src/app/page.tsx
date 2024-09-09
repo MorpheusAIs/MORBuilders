@@ -107,28 +107,29 @@ export default async function Home() {
         <div className="flex justify-center py-4">
           <Logo />
         </div>
-        <main className="container mx-auto px-4">
-          <header className="mb-12 text-center border border-[#0E5F3E] rounded-3xl relative overflow-hidden min-h-[477px] flex items-center flex-col justify-center">
-            <div className="absolute inset-0">
-              <Grid />
-            </div>
-            <div className="w-full h-full absolute inset-0 flex items-center justify-center">
-              <div className="h-full w-full flex">
-                <div className="bg-gradient-to-l from-black w-full h-full"></div>
-                <div className="bg-gradient-to-r from-black w-full h-full"></div>
+        <main className="container mx-auto">
+          <div className="px-4 md:px-0">
+            <header className="mb-4 md:mb-12 max-w-screen-xl mx-auto text-center p-6 border border-[#0E5F3E] rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
+              <div className="absolute inset-0">
+                <Grid />
               </div>
-            </div>
-            <h1 className="text-6xl font-black mb-4 relative">
-              STAKING MOR TOWARDS
-              <br />
-              BUILDERS STARTS SOON...
-            </h1>
-            <p className="text-2xl max-w-3xl mx-auto font-mono relative">
-              Access Smart Agents, AI Models & Support The Open Source Project
-              Of Your Choice. Each project selects how to reward those Staking
-              MOR toward them.
-            </p>
-          </header>
+              <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+                <div className="h-full w-full flex">
+                  <div className="bg-gradient-to-l from-black w-full h-full"></div>
+                  <div className="bg-gradient-to-r from-black w-full h-full"></div>
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-7xl font-black mb-4 relative">
+                STAKE MOR <br /> TOWARDS BUILDERS
+              </h1>
+              <p className="text-lg md:text-2xl max-w-3xl mx-auto font-mono relative">
+                Access Smart Agents, AI Models & Support The Open Source Project
+                Of Your Choice.
+                {/* Each project selects how to reward those Staking
+              MOR toward them. */}
+              </p>
+            </header>
+          </div>
 
           <div className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border">
             {/* <div className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
@@ -171,15 +172,14 @@ export default async function Home() {
                         alt={project.name}
                         width={295}
                         height={197}
-                        className="mb-2"
                       />
                     )}
-                    <div className="p-5">
+                    <div className="p-2 md:p-5">
                       <h3 className="text-lg font-semibold">
                         {project.properties.Name.title[0].plain_text}
                       </h3>
                       {project.properties.Tags.multi_select.length > 0 && (
-                        <div className="flex gap-1 flex-wrap mt-2">
+                        <div className="flex gap-1 flex-wrap mt-1 md:mt-2">
                           {project.properties.Tags.multi_select.map(
                             // eslint-disable-next-line
                             (tag: any) => (
@@ -202,8 +202,8 @@ export default async function Home() {
             </div>
           </div>
         </main>
-        <footer className="mt-12 font-mono text-sm text-muted-foreground w-full max-w-screen-xl mx-auto px-5 py-16">
-          <p className="mb-4 text-xl">
+        <footer className="mt-4 md:mt-12 font-mono text-sm text-muted-foreground w-full max-w-screen-xl mx-auto px-5 py-8 md:py-16">
+          <p className="mb-4 text-lg md:text-xl">
             MOR.BUILDERS IS FOR INFORMATIONAL PURPOSES ONLY. ALL PROJECTS
             INDEPENDENTLY DETERMINE THE TYPE OF REWARDS THEY PROVIDE TO MOR
             STAKERS. VENICE PROVIDES A PRO ACCOUNT TO THOSE THAT STAKE MOR
