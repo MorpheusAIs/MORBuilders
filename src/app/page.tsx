@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
 import { Client } from "@notionhq/client";
+import Link from "next/link";
 
 // Initializing a client
 const notion = new Client({
@@ -119,10 +120,18 @@ export default async function Home() {
                   <div className="bg-gradient-to-r from-black w-full h-full"></div>
                 </div>
               </div>
-              <h1 className="text-4xl md:text-7xl font-black mb-4 relative" data-aos="fade-up" data-aos-delay="500">
+              <h1
+                className="text-4xl md:text-7xl font-black mb-4 relative"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 STAKE MOR <br /> TOWARDS BUILDERS
               </h1>
-              <p className="text-lg md:text-2xl max-w-3xl mx-auto font-mono relative" data-aos="fade-up" data-aos-delay="600">
+              <p
+                className="text-lg md:text-2xl max-w-3xl mx-auto font-mono relative"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 Access Smart Agents, AI Models & Support The Open Source Project
                 Of Your Choice.
                 {/* Each project selects how to reward those Staking
@@ -131,7 +140,11 @@ export default async function Home() {
             </header>
           </div>
 
-          <div data-aos="fade" data-aos-delay="1000" className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border">
+          <div
+            data-aos="fade"
+            data-aos-delay="1000"
+            className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border"
+          >
             {/* <div className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
               <Select>
                 <Button variant="outline" className="bg-gray-800 text-white">
@@ -156,48 +169,51 @@ export default async function Home() {
                 <Filter className="mr-2 h-4 w-4" /> Filters
               </Button>
             </div> */}
-
+{/* {project.properties.URL ? project.properties.URL.url : '#'} */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
               {
                 // eslint-disable-next-line
                 db.results.map((project: any) => (
-                  // {project.properties.URL && project.properties.URL.url}
-                  <div
-                    data-aos="fade"
+                  <Link
+                    href={`/builder/${project.id}`}
                     key={project.id}
-                    className="bg-card border border-border rounded-xl overflow-hidden"
                   >
-                    {project.properties.Image.files[0]?.file.url && (
-                      <Image
-                        src={project.properties.Image.files[0]?.file.url}
-                        alt={project.name}
-                        width={295}
-                        height={197}
-                      />
-                    )}
-                    <div className="p-2 md:p-5">
-                      <h3 className="text-lg font-semibold">
-                        {project.properties.Name.title[0].plain_text}
-                      </h3>
-                      {project.properties.Tags.multi_select.length > 0 && (
-                        <div className="flex gap-1 flex-wrap mt-1 md:mt-2">
-                          {project.properties.Tags.multi_select.map(
-                            // eslint-disable-next-line
-                            (tag: any) => (
-                              <Badge
-                                key={tag.name}
-                                variant={"secondary"}
-                                className="rounded-full"
-                              >
-                                {/* <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div> */}
-                                <span className="text-sm">{tag.name}</span>
-                              </Badge>
-                            )
-                          )}
-                        </div>
+                    <div
+                      data-aos="fade"
+                      className="bg-card border border-border rounded-xl overflow-hidden"
+                    >
+                      {project.properties.Image.files[0]?.file.url && (
+                        <Image
+                          src={project.properties.Image.files[0]?.file.url}
+                          alt={project.name}
+                          width={295}
+                          height={197}
+                        />
                       )}
+                      <div className="p-2 md:p-5">
+                        <h3 className="text-lg font-semibold">
+                          {project.properties.Name.title[0].plain_text}
+                        </h3>
+                        {project.properties.Tags.multi_select.length > 0 && (
+                          <div className="flex gap-1 flex-wrap mt-1 md:mt-2">
+                            {project.properties.Tags.multi_select.map(
+                              // eslint-disable-next-line
+                              (tag: any) => (
+                                <Badge
+                                  key={tag.name}
+                                  variant={"secondary"}
+                                  className="rounded-full"
+                                >
+                                  {/* <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div> */}
+                                  <span className="text-sm">{tag.name}</span>
+                                </Badge>
+                              )
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))
               }
             </div>
@@ -210,7 +226,7 @@ export default async function Home() {
             STAKERS. VENICE PROVIDES A PRO ACCOUNT TO THOSE THAT STAKE MOR
             TOWARD THEIR BUILDER ADDRESS.
           </p>
-          <div className="flex justify-center items-center" data-aos="fade">
+          <div className="flex justify-center items-center">
             <Logo />
           </div>
         </footer>
