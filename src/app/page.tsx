@@ -104,11 +104,11 @@ export default async function Home() {
   return (
     <>
       <div className="min-h-screen bg-black text-white">
-        <div className="flex justify-center py-4">
+        <div className="flex justify-center py-4" data-aos="fade">
           <Logo />
         </div>
         <main className="container mx-auto">
-          <div className="px-4 md:px-0">
+          <div className="px-4 md:px-0" data-aos="fade" data-aos-delay="250">
             <header className="mb-4 md:mb-12 max-w-screen-xl mx-auto text-center p-6 border border-[#0E5F3E] rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
               <div className="absolute inset-0">
                 <Grid />
@@ -119,10 +119,10 @@ export default async function Home() {
                   <div className="bg-gradient-to-r from-black w-full h-full"></div>
                 </div>
               </div>
-              <h1 className="text-4xl md:text-7xl font-black mb-4 relative">
+              <h1 className="text-4xl md:text-7xl font-black mb-4 relative" data-aos="fade-up" data-aos-delay="500">
                 STAKE MOR <br /> TOWARDS BUILDERS
               </h1>
-              <p className="text-lg md:text-2xl max-w-3xl mx-auto font-mono relative">
+              <p className="text-lg md:text-2xl max-w-3xl mx-auto font-mono relative" data-aos="fade-up" data-aos-delay="600">
                 Access Smart Agents, AI Models & Support The Open Source Project
                 Of Your Choice.
                 {/* Each project selects how to reward those Staking
@@ -131,7 +131,7 @@ export default async function Home() {
             </header>
           </div>
 
-          <div className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border">
+          <div data-aos="fade" data-aos-delay="1000" className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border">
             {/* <div className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
               <Select>
                 <Button variant="outline" className="bg-gray-800 text-white">
@@ -163,6 +163,7 @@ export default async function Home() {
                 db.results.map((project: any) => (
                   // {project.properties.URL && project.properties.URL.url}
                   <div
+                    data-aos="fade"
                     key={project.id}
                     className="bg-card border border-border rounded-xl overflow-hidden"
                   >
@@ -203,13 +204,13 @@ export default async function Home() {
           </div>
         </main>
         <footer className="mt-4 md:mt-12 font-mono text-sm text-muted-foreground w-full max-w-screen-xl mx-auto px-5 py-8 md:py-16">
-          <p className="mb-4 text-lg md:text-xl">
+          <p className="mb-4 text-lg md:text-xl" data-aos="fade">
             MOR.BUILDERS IS FOR INFORMATIONAL PURPOSES ONLY. ALL PROJECTS
             INDEPENDENTLY DETERMINE THE TYPE OF REWARDS THEY PROVIDE TO MOR
             STAKERS. VENICE PROVIDES A PRO ACCOUNT TO THOSE THAT STAKE MOR
             TOWARD THEIR BUILDER ADDRESS.
           </p>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center" data-aos="fade">
             <Logo />
           </div>
         </footer>
