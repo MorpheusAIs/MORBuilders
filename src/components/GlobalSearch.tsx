@@ -79,6 +79,7 @@ export default function GlobalSearch({
             const properties: any = app.properties;
             const name = properties.Name.title[0]?.plain_text;
             const image = properties.Image.files[0]?.file.url;
+            const description = properties.Description.rich_text[0]?.plain_text;
 
             return (
               <Link
@@ -95,7 +96,9 @@ export default function GlobalSearch({
                 />
                 <div>
                   <h3 className="text-white font-semibold">{name}</h3>
-                  <p className="text-gray-400 text-sm">{app.description}</p>
+                  {description && (
+                    <p className="text-gray-400 text-sm">{description}</p>
+                  )}
                 </div>
               </Link>
             );
