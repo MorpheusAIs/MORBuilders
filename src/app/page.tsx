@@ -145,7 +145,7 @@ export default async function Home() {
             data-aos-delay="1000"
             className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border"
           >
-            {/* <div className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
+            {/* <div id="filters" className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
               <Select>
                 <Button variant="outline" className="bg-gray-800 text-white">
                   Salary <ChevronDown className="ml-2 h-4 w-4" />
@@ -169,7 +169,7 @@ export default async function Home() {
                 <Filter className="mr-2 h-4 w-4" /> Filters
               </Button>
             </div> */}
-{/* {project.properties.URL ? project.properties.URL.url : '#'} */}
+            {/* {project.properties.URL ? project.properties.URL.url : '#'} */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
               {
                 // eslint-disable-next-line
@@ -177,11 +177,10 @@ export default async function Home() {
                   <Link
                     href={`/builder/${project.id}`}
                     key={project.id}
+                    className="group"
+                    data-aos="fade"
                   >
-                    <div
-                      data-aos="fade"
-                      className="bg-card border border-border rounded-xl overflow-hidden"
-                    >
+                    <div className="bg-card border border-border rounded-xl overflow-hidden group-hover:border-[#0E5F3E] group-hover:border-2 group-hover:-translate-y-1 transition-all duration-300">
                       {project.properties.Image.files[0]?.file.url && (
                         <Image
                           src={project.properties.Image.files[0]?.file.url}
