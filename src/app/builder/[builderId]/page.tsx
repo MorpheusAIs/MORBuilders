@@ -52,7 +52,7 @@ export default async function Page({ params }: SpaceProps) {
     <div className="min-h-screen bg-black text-white">
       {/* <pre>{JSON.stringify(pageData.properties, null, 2)}</pre> */}
       <main className="container mx-auto">
-        <div className="max-w-screen-xl w-full mx-auto py-4 px-4 flex items-center gap-4">
+        <div data-aos="fade" className="max-w-screen-xl w-full mx-auto py-4 px-4 flex items-center gap-4">
           <BackButton /> <span>Builders</span> /{" "}
           <span className="text-[#20DC8E]">{name}</span>
         </div>

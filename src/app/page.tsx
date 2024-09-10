@@ -8,6 +8,8 @@ import Image from "next/image";
 
 import { Client } from "@notionhq/client";
 import Link from "next/link";
+import GlobalSearch from "@/components/GlobalSearch";
+import { Button } from "@/components/ui/button";
 
 // Initializing a client
 const notion = new Client({
@@ -38,12 +40,21 @@ export default async function Home() {
   return (
     <>
       <div className="min-h-screen bg-black text-white">
-        <div className="flex justify-center py-4" data-aos="fade">
+        <div
+          className="max-w-screen-xl px-4 mx-auto flex justify-between py-4 relative z-50"
+          data-aos="fade"
+        >
           <Logo />
+          <Button variant={"default"} className="rounded-full">
+            Call to action
+          </Button>
+          <div className="absolute z-50 inset-0 pr-4 w-full pl-48 sm:pl-0 flex items-center h-full justify-center">
+            <GlobalSearch data={db.results} />
+          </div>
         </div>
         <main className="container mx-auto">
           <div className="px-4 md:px-0" data-aos="fade" data-aos-delay="250">
-            <header className="mb-4 md:mb-12 max-w-screen-xl mx-auto text-center p-6 border border-[#0E5F3E] rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
+            <header className="mb-4 md:mb-4 max-w-screen-xl mx-auto text-center p-6 border border-[#0E5F3E] rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
               <div className="absolute inset-0">
                 <Grid />
               </div>
@@ -78,29 +89,11 @@ export default async function Home() {
             data-aos-delay="1000"
             className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border"
           >
-            {/* <div id="filters" className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border">
-              <Select>
-                <Button variant="outline" className="bg-gray-800 text-white">
-                  Salary <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
-              </Select>
-              <Select>
-                <Button variant="outline" className="bg-gray-800 text-white">
-                  Job type <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
-              </Select>
-              <Button variant="outline" className="bg-green-800 text-white">
-                Engineer
-              </Button>
-              <Button variant="outline" className="bg-green-800 text-white">
-                Remote
-              </Button>
-              <Button variant="outline" className="bg-gray-800 text-white">
-                Remote
-              </Button>
-              <Button variant="outline" className="bg-gray-800 text-white">
-                <Filter className="mr-2 h-4 w-4" /> Filters
-              </Button>
+            {/* <div
+              id="filters"
+              className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border"
+            >
+              
             </div> */}
             {/* {project.properties.URL ? project.properties.URL.url : '#'} */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
@@ -151,7 +144,7 @@ export default async function Home() {
             </div>
           </div>
         </main>
-        <footer className="mt-4 md:mt-12 font-mono text-sm text-muted-foreground w-full max-w-screen-xl mx-auto px-5 py-8 md:py-16">
+        <footer className="mt-4  font-mono text-sm text-muted-foreground w-full max-w-screen-xl mx-auto px-5 py-8 ">
           <p className="mb-4 text-lg md:text-xl" data-aos="fade">
             MOR.BUILDERS IS FOR INFORMATIONAL PURPOSES ONLY. ALL PROJECTS
             INDEPENDENTLY DETERMINE THE TYPE OF REWARDS THEY PROVIDE TO MOR
