@@ -19,23 +19,9 @@ const notion = new Client({
 export default async function Home() {
   const db = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
-    // filter_properties: ["propertyID1", "propertyID2"],
   });
 
-  // Removing explicit any lint error
-  // eslint-disable-next-line
-  // console.log(db.results);
-  console.log(
-    (
-      db.results.find(
-        (result) =>
-          // eslint-disable-next-line
-          (result as any).url ===
-          "https://www.notion.so/Venice-f9df1f1fe7ff4c33b2f9ad6dcd0a1721"
-        // eslint-disable-next-line
-      ) as any
-    ).properties.Tags.multi_select[0].name
-  );
+  db.results.reverse();
 
   return (
     <>
