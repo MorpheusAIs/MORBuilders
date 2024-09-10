@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MOR Builders
+
+![MOR Builders Logo](src/app/opengraph-image.jpg)
+
+Stake MOR towards builders - Access Smart Agents, AI Models & Support The Open Source Project Of Your Choice.
+
+## About
+
+MOR Builders is a platform that allows you to stake MOR tokens towards builders, giving you access to Smart Agents, AI Models, and the ability to support open source projects of your choice.
 
 ## Getting Started
 
-First, run the development server:
+This project is built with [Next.js](https://nextjs.org) and bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+### Prerequisites
+
+- Node.js v20.8.1 or later
+- Bun package manager
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
+```
+
+### Running the Development Server
+
+```bash
 bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project follows the Next.js 14 app directory structure. Key directories include:
+
+- `src/app`: Contains the main application pages and layouts
+- `src/components`: Reusable React components
+- `src/lib`: Utility functions and shared logic
+
+## Technologies Used
+
+- Next.js 14 (App Router)
+- TailwindCSS
+- shadcn/ui
+- Bun
+- TypeScript
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project, check out the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Bun Documentation](https://bun.sh/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+We welcome contributions to the MOR Builders project! Please see our [Contributing Guide](CONTRIBUTING.md) for more information on how to get started.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is optimized for deployment on the [Vercel Platform](https://vercel.com). For more details, check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
