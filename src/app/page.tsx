@@ -14,65 +14,6 @@ const notion = new Client({
   auth: process.env.NOTION_SECRET,
 });
 
-// const projects = [
-//   {
-//     name: "nounspace",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "Akash Network",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-//   {
-//     name: "CoinCap",
-//     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/170364/487047_33893.png",
-//   },
-// ];
-
 export default async function Home() {
   const db = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
@@ -93,14 +34,6 @@ export default async function Home() {
       ) as any
     ).properties.Tags.multi_select[0].name
   );
-
-  // properties: {
-  //   URL: { id: 'KQO%40', type: 'url', url: null },
-  //   Tags: { id: 'KeUA', type: 'multi_select', multi_select: [] },
-  //   Image: { id: 'W%5Ei%40', type: 'files', files: [] },
-  //   Description: { id: '%5B%5CI%5C', type: 'rich_text', rich_text: [] },
-  //   Name: { id: 'title', type: 'title', title: [Array] }
-  // },
 
   return (
     <>

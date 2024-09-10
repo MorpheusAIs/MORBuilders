@@ -52,11 +52,12 @@ export default async function Page({ params }: SpaceProps) {
     <div className="min-h-screen bg-black text-white">
       {/* <pre>{JSON.stringify(pageData.properties, null, 2)}</pre> */}
       <main className="container mx-auto">
-        <div className="max-w-screen-xl w-full mx-auto py-4">
-          <BackButton />
+        <div className="max-w-screen-xl w-full mx-auto py-4 px-4 flex items-center gap-4">
+          <BackButton /> <span>Builders</span> /{" "}
+          <span className="text-[#20DC8E]">{name}</span>
         </div>
-        <div className="px-4 md:px-0" data-aos="fade" data-aos-delay="250">
-          <header className=" rounded-b-none max-w-screen-xl mx-auto text-center p-6 border border-[#0E5F3E] rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
+        <div className=" md:px-0" data-aos="fade" data-aos-delay="250">
+          <header className="rounded-b-none max-w-screen-xl mx-auto text-center p-6 border border-b-0 border-border rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
             <div className="absolute inset-0">
               <Grid />
             </div>
@@ -67,7 +68,7 @@ export default async function Page({ params }: SpaceProps) {
                   alt="hello"
                   width={295}
                   height={197}
-                  className="rounded-2xl mx-auto"
+                  className="rounded-2xl mx-auto border border-[#0E5F3E] shadow-2xl shadow-[#0E5F3E]/70"
                 />
               )}
 
@@ -111,15 +112,9 @@ export default async function Page({ params }: SpaceProps) {
             </div>
           </header>
         </div>
-        <section className=" rounded-t-none bg-card mb-4 md:mb-12 max-w-screen-xl mx-auto text-center p-6 border border-border rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
-          <h2
-            className="text-4xl font-black mb-4 relative"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            Details
-          </h2>
-          <p className="mb-4 text-lg md:text-xl" data-aos="fade">
+        <section data-aos="fade" data-aos-delay="500" className="rounded-t-none bg-card mb-4 md:mb-12 max-w-screen-xl mx-auto text-center p-6 border border-border rounded-3xl relative overflow-hidden md:min-h-[477px] min-h-[338px] flex items-center flex-col justify-center">
+          <h2 className="text-4xl font-black mb-4 relative">Details</h2>
+          <p className="mb-4 text-lg md:text-xl">
             When Builder Rewards go live you will be able to Stake MOR
             toward&nbsp;
             {name}
@@ -144,7 +139,7 @@ export default async function Page({ params }: SpaceProps) {
           STAKERS. VENICE PROVIDES A PRO ACCOUNT TO THOSE THAT STAKE MOR TOWARD
           THEIR BUILDER ADDRESS.
         </p>
-        <div className="flex justify-center items-center" data-aos="fade">
+        <div className="flex justify-center items-center">
           <Logo />
         </div>
       </footer>
