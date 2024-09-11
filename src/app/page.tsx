@@ -1,15 +1,12 @@
 import Grid from "@/components/Grid";
 import Logo from "@/components/Logo";
 import { Badge } from "@/components/ui/badge";
-// import { Button } from "@/components/ui/button";
-// import { Select } from "@/components/ui/select";
-// import { ChevronDown, Filter } from "lucide-react";
 import Image from "next/image";
 
 import { Client } from "@notionhq/client";
 import Link from "next/link";
-import GlobalSearch from "@/components/GlobalSearch";
 import { Button } from "@/components/ui/button";
+import { SearchModal } from "@/components/SearchModal";
 
 // Initializing a client
 const notion = new Client({
@@ -27,16 +24,18 @@ export default async function Home() {
     <>
       <div className="min-h-screen bg-black text-white">
         <div
-          className="max-w-screen-xl px-4 mx-auto flex justify-between py-4 relative z-50"
+          className="max-w-screen-xl px-4 mx-auto flex justify-between py-4 relative z-50 gap-1"
           data-aos="fade"
         >
-          <Logo />
-          <Button variant={"default"} className="rounded-full">
-            Call to action
-          </Button>
-          <div className="absolute z-50 inset-0 pr-4 w-full pl-48 sm:pl-0 flex items-center h-full justify-center">
-            <GlobalSearch data={db.results} />
+          <div>
+            <Logo />
           </div>
+          <div className="flex items-center gap-2 w-full justify-end sm:justify-center">
+            <SearchModal data={db.results} />
+          </div>
+          <Button variant={"default"} className="rounded-full">
+            Get listed
+          </Button>
         </div>
         <main className="container mx-auto">
           <div className="px-4 md:px-0" data-aos="fade" data-aos-delay="250">
@@ -50,16 +49,20 @@ export default async function Home() {
                   <div className="bg-gradient-to-r from-black w-full h-full"></div>
                 </div>
               </div>
+              <div className="relative mb-4" data-aos="fade"
+                data-aos-delay="250">
+                <Badge>Coming soon</Badge>
+              </div>
               <h1
                 className="text-4xl md:text-7xl font-black mb-4 relative"
-                data-aos="fade-up"
+                data-aos="fade"
                 data-aos-delay="500"
               >
                 STAKE MOR <br /> TOWARDS BUILDERS
               </h1>
               <p
                 className="text-lg md:text-2xl max-w-3xl mx-auto font-mono relative"
-                data-aos="fade-up"
+                data-aos="fade"
                 data-aos-delay="600"
               >
                 Access Smart Agents, AI Models & Support The Open Source Project
