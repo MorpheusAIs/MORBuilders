@@ -7,6 +7,13 @@ import { Client } from "@notionhq/client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SearchModal } from "@/components/SearchModal";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 // Initializing a client
 const notion = new Client({
@@ -33,8 +40,16 @@ export default async function Home() {
           <div className="flex items-center gap-2 w-full justify-end sm:justify-center">
             <SearchModal data={db.results} />
           </div>
-          <Button variant={"default"} className="rounded-full">
-            Get listed
+          <Button variant={"default"} className="rounded-full" asChild>
+            <Link
+              target="_blank"
+              rel="nofollow noreferrer"
+              href={
+                "https://agnelnieves.notion.site/109b65190d6f80aba5d0d53ade167351"
+              }
+            >
+              Get listed
+            </Link>
           </Button>
         </div>
         <main className="container mx-auto">
@@ -49,8 +64,11 @@ export default async function Home() {
                   <div className="bg-gradient-to-r from-black w-full h-full"></div>
                 </div>
               </div>
-              <div className="relative mb-4" data-aos="fade"
-                data-aos-delay="250">
+              <div
+                className="relative mb-4"
+                data-aos="fade"
+                data-aos-delay="250"
+              >
                 <Badge>Coming soon</Badge>
               </div>
               <h1
@@ -98,7 +116,11 @@ export default async function Home() {
                     <div className="bg-card border border-border rounded-xl overflow-hidden group-hover:border-[#0E5F3E] group-hover:border-2 group-hover:-translate-y-1 transition-all duration-300">
                       {project.properties.img && (
                         <Image
-                          src={project.properties.img.url ? project.properties.img.url : "/"}
+                          src={
+                            project.properties.img.url
+                              ? project.properties.img.url
+                              : "/"
+                          }
                           alt={project.name}
                           width={295}
                           height={197}
