@@ -7,13 +7,6 @@ import { Client } from "@notionhq/client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SearchModal } from "@/components/SearchModal";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 
 // Initializing a client
 const notion = new Client({
