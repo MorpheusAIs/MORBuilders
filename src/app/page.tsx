@@ -96,9 +96,9 @@ export default async function Home() {
                     data-aos="fade"
                   >
                     <div className="bg-card border border-border rounded-xl overflow-hidden group-hover:border-[#0E5F3E] group-hover:border-2 group-hover:-translate-y-1 transition-all duration-300">
-                      {project.properties.Image.files[0]?.file.url && (
+                      {project.properties.img && (
                         <Image
-                          src={project.properties.Image.files[0]?.file.url}
+                          src={project.properties.img.url ? project.properties.img.url : "/"}
                           alt={project.name}
                           width={295}
                           height={197}

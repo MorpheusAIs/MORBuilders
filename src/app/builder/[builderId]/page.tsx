@@ -47,6 +47,7 @@ export default async function Page({ params }: SpaceProps) {
   const description = pageProperties.Description.rich_text[0]?.plain_text;
   //   const address = pageProperties.Address.rich_text[0].plain_text;
   const website = pageProperties.URL ? pageProperties.URL.url : "#";
+  const image = pageProperties.img.url ? pageProperties.img.url : '';
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -62,9 +63,9 @@ export default async function Page({ params }: SpaceProps) {
               <Grid />
             </div>
             <div className="relative z-10 text-center">
-              {pageProperties.Image.files[0]?.file.url && (
+              {image && (
                 <Image
-                  src={pageProperties.Image.files[0]?.file.url}
+                  src={image}
                   alt="hello"
                   width={295}
                   height={197}
