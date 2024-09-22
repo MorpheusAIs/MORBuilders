@@ -108,28 +108,28 @@ function ProfileForm({ className, data }: { className?: string; data: any[] }) {
         style={{
           paddingBlock: 0,
         }}
-        className="w-full h-[calc(100vh-64px)] sm:h-[590px] py-0 p-5"
+        className="w-full h-[calc(100vh-64px)] sm:h-[590px] py-0 p-2"
       >
         {/* eslint-disable-next-line */}
         {filteredApps.map((app: any) => {
           // eslint-disable-next-line
           const properties: any = app.properties;
           const name = properties.Name.title[0]?.plain_text;
-          const image = properties.Image.files[0]?.file.url;
+          const image = properties.img.url ? properties.img.url : '';
           const description = properties.Description.rich_text[0]?.plain_text;
 
           return (
             <Link
               key={app.id}
               href={`/builder/${app.id}`}
-              className="flex items-center py-3 hover:bg-black/20 cursor-pointer mx-2 rounded-2xl"
+              className="flex items-center p-3 hover:bg-black/20 cursor-pointer mx-2 rounded-2xl"
             >
               <Image
                 src={image}
                 alt={name}
-                width={40}
+                width={50}
                 height={40}
-                className="rounded-md mr-3"
+                className="rounded-sm mr-3"
               />
               <div>
                 <h3 className="text-white font-semibold">{name}</h3>
