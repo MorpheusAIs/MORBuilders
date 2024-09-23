@@ -89,13 +89,6 @@ export default async function Home() {
             data-aos-delay="1000"
             className="max-w-screen-xl mx-auto w-full bg-background rounded-3xl overflow-hidden border border-border"
           >
-            {/* <div
-              id="filters"
-              className="flex flex-wrap gap-4 justify-center bg-background py-3 px-6 border-b border-border"
-            >
-              
-            </div> */}
-            {/* {project.properties.URL ? project.properties.URL.url : '#'} */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
               {
                 // eslint-disable-next-line
@@ -133,7 +126,6 @@ export default async function Home() {
                                   variant={"secondary"}
                                   className="rounded-full"
                                 >
-                                  {/* <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div> */}
                                   <span className="text-sm">{tag.name}</span>
                                 </Badge>
                               )
